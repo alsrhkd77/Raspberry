@@ -29,7 +29,7 @@ def show_all():
     result = cur.fetchall()
     if not result:
         return abort(404, "Page not found")
-    return render_template("dht22.html", items=result)
+    return render_template("dht22db.html", items=result)
 
 
 @app.route('/add_phone', methods=['POST'])
