@@ -25,7 +25,7 @@ def get_value():
 @app.route('/')
 def show_all():
     get_value()
-    cur.execute("select * from dht_22")
+    cur.execute("select * from dht22")
     result = cur.fetchall()
     if not result:
         return abort(404, "Page not found")
