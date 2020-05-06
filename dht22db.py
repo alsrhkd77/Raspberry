@@ -22,6 +22,7 @@ def get_value():
 
 @app.route('/')
 def show_all():
+    get_value()
     cur.execute("select * from dht_22")
     result = cur.fetchall()
     if not result:
