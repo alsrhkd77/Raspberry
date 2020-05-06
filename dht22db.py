@@ -17,8 +17,9 @@ def get_value():
     if humidity is not None and temperature is not None:
         now = datetime.datetime.now()
         nowDatetime = now.strftime('%Y-%m-%d %H:%M:%S')
+
         # cur.execute("insert into dht22(time, temp, hum) value(%s,%10.2f,%s)", (nowDatetime, temperature, hu\midity))
-        cur.execute(f'''INSERT INTO dht22 VALUES(\'{nowDatetime}\', \'{temperature}\', \'{humidity}\');''')
+        cur.execute(f'''INSERT INTO dht22 VALUES(\'{nowDatetime}\', \'{temperature:.6f}\', \'{humidity}\');''')
         db.commit()
 
 @app.route('/')
