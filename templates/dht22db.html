@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>dht22</title>
+</head>
+<body>
+<button type="button" onclick="location.href='dht22db.html'"/>
+<table border="" style="width: 50%; padding: 20px; margin: auto; text-align: center">
+    <caption><h2>DHT22 온습도 센서</h2></caption>
+    <tr>
+        <th>시 간</th>
+        <td>온 도</td>
+        <th>습 도</th>
+    </tr>
+    {% for item in items %}
+        <tr>
+            <td>{{ item[0] }}</td>
+            <td>{{ item[1] }}</td>
+            <td>{{ item[2] }}</td>
+        </tr>
+    {% endfor %}
+</table>
+</body>
+</html>
