@@ -19,7 +19,7 @@ def get_value():
         nowDatetime = now.strftime('%Y-%m-%d %H:%M:%S')
 
         # cur.execute("insert into dht22(time, temp, hum) value(%s,%10.2f,%s)", (nowDatetime, temperature, hu\midity))
-        cur.execute(f'''INSERT INTO dht22 VALUES(\'{nowDatetime}\', \'{temperature:.6f}\', \'{humidity}\');''')
+        cur.execute(f'''INSERT INTO dht22 VALUES(\'{nowDatetime}\', \'{temperature:.6f}\', \'{humidity:.6f}\');''')
         db.commit()
 
 @app.route('/')
