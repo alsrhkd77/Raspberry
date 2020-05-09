@@ -11,9 +11,11 @@ GPIO.setup(button, GPIO.IN, pull_up_down=GPIO.PUD_DOWN)
 
 app = Flask(__name__)
 
+
 def update_leds():
     for i, value in enumerate(ledStates):
         GPIO.output(leds[i], value)
+
 
 control_page = """
 <script>
@@ -40,6 +42,7 @@ value='LED{{led0}}'/>
 value='LED{{led1}}'/>
 """
 
+
 @app.route('/')
 @app.route('/<led>')
 def index(led="n"):
@@ -50,9 +53,8 @@ def index(led="n"):
     state = GPIO.input(button)
 
     return render_template_string(control_page,
-            btnState=state,led0=0, led1=1)
+                                  btnState=state, led0=0, led1=1)
 
 
 if __name__ == '__main__':
     app.run(host='localhost', port=5000)
-

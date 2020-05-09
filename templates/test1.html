@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Exam</title>
+</head>
+<body>
+<div>
+    <h2>이름 변경하기</h2>
+    <hr>
+    <form action="/update_S" method="post">
+        <p><label>I D: <input type="text" name="s_id"></label></p>
+        <p><label>변경할 이름: <input type="text" name="s_name"></label></p>
+        <p><input type="submit" value="이름 변경"></p>
+    </form>
+</div>
+
+<hr>
+
+<table border="" style="width: 50%; padding: 20px; margin: auto; text-align: center">
+    <caption><h2>목 록</h2></caption>
+    <tr>
+        <th>I D</th>
+        <td></td>
+        <th>NAME</th>
+    </tr>
+    {% for item in items %}
+        <tr>
+            <td>{{ item[0] }}</td>
+            <td>:</td>
+            <td>{{ item[1] }}</td>
+        </tr>
+    {% endfor %}
+</table>
+</body>
+</html>
