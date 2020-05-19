@@ -3,7 +3,7 @@ import time
 
 
 GPIO.setmode(GPIO.BCM)
-pir = 24
+pir = 14
 GPIO.setup(pir, GPIO.IN)
 
 def loop():
