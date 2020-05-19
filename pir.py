@@ -27,7 +27,7 @@ def detected():
 
 
 def undetected():
-    GPIO.output(led, 1)
+    GPIO.output(led, 0)
 
 
 try:
