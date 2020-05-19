@@ -14,6 +14,7 @@ def loop():
             cnt += 1
             print(cur_stat)
             print("%d번 감지됨" % cnt)
+            time.sleep(1)
 
 
 try:
