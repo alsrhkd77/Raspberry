@@ -14,6 +14,8 @@ def loop():
             cnt += 1
             print("감지됨")
             time.sleep(0.5)
+        else:
+            print("감지됨")
 
 
 try:
