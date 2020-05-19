@@ -10,8 +10,9 @@ def loop():
     cnt = 0
     while True:
         cur_stat = GPIO.input(pir)
-        if cur_stat == GPIO.LOW:
+        if cur_stat == 1:
             cnt += 1
+            print(cur_stat)
             print("%d번 감지됨" % cnt)
 
 
