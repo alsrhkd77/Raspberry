@@ -15,7 +15,7 @@ def loop():
             print("감지됨")
             time.sleep(0.5)
         else:
-            print("감지됨")
+            print("감지안됨")
 
 
 try:
