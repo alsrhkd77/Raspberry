@@ -12,7 +12,7 @@ def loop():
     cnt = 0
     while True:
         cur_stat = GPIO.input(pir)
-        if cur_stat == 1:
+        if cur_stat == GPIO.LOW:
             cnt += 1
             detected()
         else:
