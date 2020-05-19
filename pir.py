@@ -13,10 +13,10 @@ def loop():
         if cur_stat == 1:
             cnt += 1
             print("감지됨")
-
         else:
             print("감지안됨")
         time.sleep(0.5)
+    GPIO.cleanup()
 
 
 try:
