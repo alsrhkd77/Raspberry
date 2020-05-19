@@ -14,12 +14,9 @@ def loop():
         cur_stat = GPIO.input(pir)
         if cur_stat == 1:
             cnt += 1
-            print("감지됨")
             detected()
         else:
-            print("감지안됨")
             undetected()
-        time.sleep(0.5)
 
 
 def detected():
