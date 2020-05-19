@@ -1,13 +1,13 @@
 import RPi.GPIO as GPIO
 import time
-​
+
+
 GPIO.setmode(GPIO.BCM)
-​
 pir = 24
 GPIO.setup(pir, GPIO.IN)
-​
 
-def loop():
+
+​def loop():
     cnt = 0
     while True:
         cur_stat = GPIO.input(pir)
