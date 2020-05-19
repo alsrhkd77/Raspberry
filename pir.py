@@ -13,6 +13,7 @@ def loop():
         if cur_stat == 1:
             cnt += 1
             print("감지됨")
+            time.sleep(0.5)
 
 
 try:
