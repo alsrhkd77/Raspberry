@@ -10,11 +10,9 @@ def loop():
     cnt = 0
     while True:
         cur_stat = GPIO.input(pir)
-        print(GPIO.input(pir))
         if cur_stat == 1:
             cnt += 1
-            print("%d번 감지됨" % cnt)
-        time.sleep(1)
+            print("감지됨")
 
 
 try:
