@@ -3,7 +3,7 @@ import time
 import smtplib
 from email.mime.image import MIMEImage
 from email.mime.multipart import MIMEMultipart
-import motion
+import detect_motion as motion
 
 smtp_server = "smtp.gmail.com"
 port = 587
