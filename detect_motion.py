@@ -7,9 +7,11 @@ def diffImage(i0, i1, i2):
     diff1 = cv2.absdiff(i1, i2)
     return cv2.bitwise_and(diff0, diff1)
 
+
 def getGrayCamImg(cam):
     img = cam.read()[1]
     return cv2.cvtColor(img, cv2.COLOR_RGB2GRAY)
+
 
 def updateCameraImage(cam, i):
     img = cam.read()[1]
