@@ -29,7 +29,7 @@ def sendMail(image):
     ret, m = server.login(userid, passwd)
     if (ret != 235):
         print("login fail")
-    return
+        return
     server.sendmail('me', to, msg.as_string())
     server.quit()
 
