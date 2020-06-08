@@ -18,7 +18,7 @@ capturing = 0
 packet = ""
 while True:
     line = p.readline()
-    print(line[0] + ' ' + line[1] + ' ' + line[2])
+    print(str(line[0]) + ' ' + str(line[1]) + ' ' + str(line[2]))
     if not line: break
     if capturing == 0:
         if line[0] == '>':
