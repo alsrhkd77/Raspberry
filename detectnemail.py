@@ -8,8 +8,8 @@ import detect_motion as motion
 smtp_server = "smtp.gmail.com"
 port = 587
 portssl = 465
-userid = "<alsrhkd77@gmail.com>"
-passwd = "<151587shs!>"
+userid = "alsrhkd77@gmail.com"
+passwd = "151587shs!"
 
 
 def sendMail(image):
