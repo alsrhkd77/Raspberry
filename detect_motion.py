@@ -19,3 +19,4 @@ def updateCameraImage(cam, i):
     i[1] = cv2.cvtColor(img, cv2.COLOR_RGB2GRAY)
     img = cam.read()[1]
     i[2] = cv2.cvtColor(img, cv2.COLOR_RGB2GRAY)
+    return i

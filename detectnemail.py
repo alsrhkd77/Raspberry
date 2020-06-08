@@ -62,7 +62,7 @@ if __name__ == '__main__':
             flag = False
             checkFlag = 0
         # process next image
-        motion.updateCameraImage(cam, i)
+        i = motion.updateCameraImage(cam, i)
         key = cv2.waitKey(10)
         if key == 27:
             break
