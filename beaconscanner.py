@@ -20,6 +20,7 @@ while True:
     line = p.readline()
     if not line: break
     if capturing == 0:
+        print(line[0])
         if line[0] == '>':
             packet = line[2:].strip()
             capturing = 1
