@@ -9,7 +9,7 @@ smtp_server = "smtp.gmail.com"
 port = 587
 portssl = 465
 userid = "<alsrhkd77@gmail.com>"
-passwd = "<1q2w3e4r!!>"
+passwd = "<151587shs!>"
 
 
 def sendMail(image):
