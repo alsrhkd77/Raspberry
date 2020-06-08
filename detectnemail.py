@@ -48,7 +48,7 @@ if __name__ == '__main__':
         i[n] = motion.getGrayCamImg(cam)
     checkFlag = 0
     while True:
-        diff = motion.diffImage(i)
+        diff = motion.diffImage(i[0], i[1], i[2])
         thrimg = cv2.threshold(diff, thresh, 1, cv2.THRESH_BINARY)[1]
         count = cv2.countNonZero(thrimg)
         # if invader is checked.
