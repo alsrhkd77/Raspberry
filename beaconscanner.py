@@ -1,6 +1,5 @@
-#!/usr / bin / python3
+#!/usr/bin/python3
 import pexpect, re, sys
-
 
 def measureDistance(txPower, rssi):
     if rssi == 0:
@@ -17,18 +16,17 @@ p = pexpect.spawn("sudo hcidump --raw")
 capturing = 0
 packet = ""
 while True:
-    line = p.readline()
-    print(str(line[0]) + ' ' + str(line[1]) + ' ' + str(line[2]))
+    bline = p.readline()
+    line = bline.decode("utf-8")
     if not line: break
     if capturing == 0:
         if line[0] == '>':
             packet = line[2:].strip()
             capturing = 1
     else:
-        if re.match("^[0-9a-fA-F]{2}\[0-9a-fA-F]", line.strip()):
+        if re.match("^[0-9a-fA-F]{2}\ [0-9a-fA-F]", line.strip()):
             packet += ' ' + line.strip()
-        elif re.match("^04\3E\2A\02\01\.{26}\02\01\.{14}\02\15", packet):
-            print(" packet = " + packet)
+        elif re.match("^04\ 3E\ 2A\ 02\ 01\ .{26}\ 02\ 01\ .{14}\ 02\ 15", packet):
             UUID = packet[69:116].replace(' ', '')
             UUID = UUID[0:8] + '-' + UUID[8:12] + '-' + UUID[12:16] + '-' + UUID[16:20] + '-' + UUID[20:]
             MAJOR = int(packet[117:122].replace(' ', ''), 16)
@@ -38,7 +36,12 @@ while True:
             if len(sys.argv) != 1 and sys.argv[1] == "-b":
                 print(UUID, MAJOR, MINOR, POWER, RSSI)
             else:
-                print("UUID: %s MAJOR: %d MINOR: %d POWER: %d RSSI: % d") % (UUID, MAJOR, MINOR, POWER, RSSI)
+                print("UUID: " + str(UUID))
+                print("MAJOR: " + str(MAJOR))
+                print("MINOR: " + str(MINOR))
+                print("POWER: " + str(POWER))
+                print("RSSI: " + str(RSSI))
+                #print("UUID: %s MAJOR: %d MINOR: %d POWER: %d RSSI: % d") % UUID, MAJOR, MINOR, POWER, RSSI
             print("distance =", measureDistance(POWER, RSSI))
             capturing = 0
             packet = ""
